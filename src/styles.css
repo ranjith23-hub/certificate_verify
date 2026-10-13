@@ -1,0 +1,90 @@
+:root { --green: #2f6b3f; --green-d: #25573a; --lime: #a8d44a; --ink: #1f2937; --mut: #6b7280; --line: #e5e7eb; --bg: #f3f5f2; }
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Inter, system-ui, -apple-system, 'Segoe UI', sans-serif; background: var(--bg); color: var(--ink); }
+h2, h3, p { margin: 0; }
+.muted { color: var(--mut); font-size: .88rem; }
+.small { font-size: .8rem; }
+
+/* shell */
+.topbar { display: flex; align-items: center; gap: 1.25rem; padding: .6rem 1.5rem; background: #fff; border-bottom: 3px solid var(--lime); }
+.brand { height: 34px; }
+.topbar nav { flex: 1; display: flex; gap: .25rem; }
+.tab { border: 0; background: none; padding: .5rem .9rem; border-radius: 8px; font: inherit; color: var(--mut); cursor: pointer; }
+.tab.on { background: #e8f2e3; color: var(--green); font-weight: 600; }
+main { max-width: 1000px; margin: 0 auto; padding: 1.75rem 1.25rem 3rem; }
+
+/* buttons */
+.btn { font: inherit; font-size: .9rem; padding: .5rem 1rem; border: 1px solid #d1d5db; background: #fff; border-radius: 8px; cursor: pointer; white-space: nowrap; }
+.btn:hover:not(:disabled) { background: #f9fafb; }
+.btn:disabled { opacity: .55; cursor: default; }
+.btn.primary { background: var(--green); border-color: var(--green); color: #fff; font-weight: 600; }
+.btn.primary:hover:not(:disabled) { background: #25573a; }
+.btn.ghost { border-color: transparent; background: none; color: var(--mut); }
+.btn.wide { width: 100%; padding: .7rem; }
+
+/* page */
+.page-head { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.25rem; }
+.page-head h2 { font-size: 1.5rem; margin-bottom: .2rem; }
+.toolbar { display: flex; gap: 1rem; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; }
+.seg { display: inline-flex; background: #e5e9e3; border-radius: 10px; padding: 3px; }
+.seg button { border: 0; background: none; padding: .45rem 1rem; border-radius: 8px; font: inherit; font-size: .9rem; cursor: pointer; color: var(--mut); }
+.seg button.on { background: #fff; color: var(--ink); font-weight: 600; box-shadow: 0 1px 2px rgba(0,0,0,.08); }
+.count { margin-left: .4rem; background: var(--green); color: #fff; border-radius: 999px; font-size: .72rem; padding: .05rem .45rem; }
+.search { flex: 1; min-width: 200px; padding: .55rem .8rem; border: 1px solid #d1d5db; border-radius: 8px; font: inherit; background: #fff; }
+
+/* list */
+.list { display: flex; flex-direction: column; gap: .6rem; }
+.item { display: grid; grid-template-columns: 1.6fr 1fr 1fr auto; gap: 1rem; align-items: center; background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: .9rem 1.1rem; }
+.item-top { display: flex; align-items: center; gap: .6rem; margin-bottom: .15rem; }
+.cust { font-weight: 500; }
+.item-dates, .item-by { display: flex; flex-direction: column; gap: .2rem; font-size: .9rem; }
+.item-dates .muted, .item-by .muted { display: inline-block; min-width: 4.8rem; font-size: .78rem; }
+.chip { font-size: .7rem; padding: .1rem .5rem; border-radius: 999px; font-weight: 600; }
+.chip.warn { background: #fef3c7; color: #92400e; }
+.chip.ok { background: #dcfce7; color: #166534; }
+.empty { background: #fff; border: 1px dashed #cbd5c8; border-radius: 12px; padding: 2.5rem; text-align: center; color: var(--mut); }
+.alert { background: #fef2f2; color: #991b1b; border: 1px solid #fecaca; padding: .6rem .8rem; border-radius: 8px; font-size: .9rem; margin: .5rem 0 1rem; }
+
+/* review sheet */
+.overlay { position: fixed; inset: 0; background: rgba(17,24,39,.55); z-index: 10; }
+.sheet { position: absolute; inset: 0; background: var(--bg); display: grid; grid-template-columns: 340px 1fr; }
+.side { background: #fff; border-right: 1px solid var(--line); padding: 1rem 1.25rem; display: flex; flex-direction: column; gap: .9rem; overflow-y: auto; }
+.side h3 { font-size: .8rem; text-transform: uppercase; letter-spacing: .06em; color: var(--mut); }
+.big { font-size: 1.4rem; font-weight: 700; margin-top: -.5rem; word-break: break-all; }
+dl { display: grid; grid-template-columns: 80px 1fr; gap: .4rem .6rem; margin: 0; font-size: .9rem; }
+dt { color: var(--mut); } dd { margin: 0; }
+label { font-size: .85rem; font-weight: 600; display: flex; flex-direction: column; gap: .35rem; }
+select, input { font: inherit; }
+select { padding: .6rem; border: 1px solid #d1d5db; border-radius: 8px; background: #fff; font-weight: 400; }
+.main-preview { overflow: auto; padding: 1.25rem; }
+.preview-box { max-width: 840px; margin: 0 auto; box-shadow: 0 4px 24px rgba(0,0,0,.15); background: #fff; }
+
+/* login */
+.login { max-width: 360px; margin: 6rem auto; background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 1.75rem; display: flex; flex-direction: column; gap: .8rem; }
+.login input { padding: .65rem .8rem; border: 1px solid #d1d5db; border-radius: 8px; }
+.big-brand { height: 44px; align-self: flex-start; }
+.center { text-align: center; margin-top: 4rem; }
+
+@media (max-width: 800px) {
+  .item { grid-template-columns: 1fr; gap: .5rem; }
+  .sheet { grid-template-columns: 1fr; grid-template-rows: auto 1fr; }
+  .side { border-right: 0; border-bottom: 1px solid var(--line); max-height: 55vh; }
+}
+
+/* certificate (A4 @ 96dpi) – do not use rem/vw here, PDF capture needs fixed sizes */
+.cert { width: 794px; height: 1123px; background: #fff; position: relative; font-family: Arial, Helvetica, sans-serif; color: #111; font-size: 12px; padding: 0 44px; overflow: hidden; }
+.cert-head { display: block; width: 794px; margin: 0 -44px; }
+.cert h1 { font-size: 15px; text-align: center; margin: 22px 0 6px; }
+.cert .sub { text-align: center; font-style: italic; font-size: 12px; margin-bottom: 20px; }
+.cert .meta { display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 14px; }
+.cert .cust { font-size: 12px; margin-bottom: 14px; line-height: 1.4; }
+.cert table { width: 100%; border-collapse: collapse; font-size: 11.5px; margin-bottom: 4px; }
+.cert td { border: 1px solid #555; padding: 6px 8px; height: 26px; vertical-align: middle; }
+.cert td.lbl { font-weight: 700; width: 25%; }
+.cert .two { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 12px; }
+.cert h3 { font-size: 11.5px; margin: 0 0 4px; }
+.cert .res { margin-top: 12px; font-size: 12px; }
+.cert .by { margin-top: 18px; font-size: 12px; line-height: 1.4; }
+.cert .sign { position: absolute; left: 44px; top: 790px; display: flex; flex-direction: column; gap: 6px; font-size: 12px; }
+.cert .sign img { width: 130px; margin: 4px 0; }
+.cert .foot { position: absolute; left: 0; right: 0; bottom: 28px; text-align: center; font-size: 10px; line-height: 1.6; padding: 0 20px; }
